@@ -1,0 +1,218 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ENSIM">
+    <Style x:Key="FocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+    <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+    <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+    <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+    <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+    <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+    <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+    <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+    <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+    <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+        <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="true"/>
+                        <Trigger Property="IsMouseOver" Value="true"/>
+                        <Trigger Property="IsPressed" Value="true"/>
+                        <Trigger Property="IsEnabled" Value="false"/>
+                    </ControlTemplate.Triggers>
+                    <Grid x:Name="CTRLU25"
+                          Canvas.Top="-13"
+                                  Canvas.Left="-8"
+                          Width="16"
+                          Height="22"
+                              Background="Transparent"
+                          RenderTransformOrigin="0.5,0">
+
+                        <!-- <Grid.RenderTransform>
+                            <TranslateTransform X="-8"
+                                                Y="-13" />
+                        </Grid.RenderTransform>
+                                -->
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="0.25*" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <!-- Failure Flash - Needs manual placement -->
+                       
+
+                        <Path x:Name="Chapeau"
+                              Grid.ColumnSpan="3"
+                              Margin="3,0,3,0"
+                              Data="M0,2 C1,1 3,1 4,2 z"
+                              Fill="White"
+                              Stretch="Fill"
+                              Stroke="Black"
+                              StrokeEndLineCap="Square"
+                              StrokeStartLineCap="Square" />
+
+
+
+                        <Path x:Name="triangle"
+                                  Grid.Row="2"
+                              Grid.RowSpan="2"
+                              Grid.ColumnSpan="3"
+                              Data="M0,0 L6,2 6,0 0,2 z M3,1 3,0 "
+                              Fill="White"
+                              Stretch="Fill"
+                              Stroke="Black"
+                              StrokeEndLineCap="Square"
+                              StrokeStartLineCap="Square" />
+
+                        <Path x:Name="Verticale"
+                              Grid.Row="1"
+                              Grid.RowSpan="2"
+                              Grid.Column="1"
+                              HorizontalAlignment="Center"
+                              Data="M0,0 L0,1"
+                              Fill="White"
+                              Stretch="Fill"
+                              Stroke="White"
+                              StrokeEndLineCap="Square"
+                              StrokeStartLineCap="Square" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ENSIM_ControlValve" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+        <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid Grid.Column="1">
+                        <Grid x:Name="path" RenderTransformOrigin="0.5,0.5">
+                            <Path Data="M47.909677,20.326612L48.213083,54.799194 M92.416664,36.757896L92.083336,72.591228 48.244492,54.607735z M2.9999995,36.047619L48.244492,54.607735 2.9166665,72.924564z M43.070313,1.0046501C44.35677,0.99162912 45.666668,1.0059524 47,1.0476184 70.333336,1.7142854 86,8.0476189 94,20.047619L48,20.047619 1,20.047619C9.75,7.5476189,23.773438,1.1999626,43.070313,1.0046501z" Stretch="Fill" StrokeThickness="{TemplateBinding BorderThickness}" Fill="Green" Stroke="Black"/>
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="true"/>
+                        <Trigger Property="IsMouseOver" Value="true"/>
+                        <Trigger Property="IsPressed" Value="true"/>
+                        <Trigger Property="IsEnabled" Value="false"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ENSIM_Pump" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+        <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Path x:Name="ellipse" Data="M380.46484,556.50586C371.62829,556.50586 364.46484,562.32616 364.46484,569.50586 364.46484,574.00915 367.28287,577.97567 371.56445,580.30859L371.80719,580.44252 366.60742,587.54102 394.82227,587.45122 389.41992,580.27935C393.67029,577.94244 396.46484,573.98968 396.46484,569.50591 396.46484,567.82317 396.06983,566.21429 395.35352,564.73833L395.23633,564.50591 406.96484,564.50591 406.96484,556.50591 380.96484,556.50591 380.96484,556.51191 380.87694,556.50991C380.73971,556.50691,380.6029,556.50591,380.46483,556.50591z" Stretch="Fill" StrokeThickness="{TemplateBinding BorderThickness}" Fill="Green" Stroke="White"/>
+                        <Path x:Name="shapePart" Data="M16.535159,3.9941387C9.9077425,3.9941387 4.5351591,8.0235767 4.5351591,12.99414 4.5351591,17.964702 9.9077425,21.994139 16.535159,21.994139 23.162577,21.994139 28.535159,17.964702 28.535159,12.99414 28.535159,8.0235767 23.162577,3.9941387 16.535159,3.9941387z M16.5,0.5C16.63806,0.50004959,16.77487,0.50104904,16.9121,0.5040493L16.999999,0.50605011 16.999999,0.50004959 42.999999,0.50004959 42.999999,8.5000496 31.271489,8.5000496 31.38868,8.7324696C32.104989,10.208429 32.499999,11.817309 32.499999,13.50005 32.499999,17.983819 29.70545,21.936579 25.45508,24.273489L30.85743,31.445359 2.64258,31.535159 7.8423495,24.436659 7.5996094,24.302729C3.3180294,21.969809 0.5,18.003289 0.5,13.499999 0.5,6.3202991 7.6634498,0.5 16.5,0.5z" Stretch="Fill" StrokeThickness="{TemplateBinding BorderThickness}" Stroke="Black" Fill="Green"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="true"/>
+                        <Trigger Property="IsMouseOver" Value="true"/>
+                        <Trigger Property="IsPressed" Value="true"/>
+                        <Trigger Property="IsEnabled" Value="false"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ENSIM_PID" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+        <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Grid x:Name="Shape">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid x:Name="Header">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="15"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="2"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock x:Name="Tagname" Grid.Column="1" FontSize="12" HorizontalAlignment="Left" Text="H">
+                                    
+                                </TextBlock>
+                                <TextBlock x:Name="Manual_Auto" Grid.Column="2" Foreground="#FFFF8000" FontSize="11" Text="M">
+                                    
+                                </TextBlock>
+                            </Grid>
+                            <Grid x:Name="Content" Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="15"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock x:Name="HH_H_Part" Foreground="Red" FontSize="10" HorizontalAlignment="Center" Text="H" VerticalAlignment="Top"/>
+                                <TextBlock x:Name="LL_L_Part" Foreground="Red" FontSize="10" HorizontalAlignment="Center" Text="LL" VerticalAlignment="Bottom"/>
+                                <Border x:Name="NumberPart" BorderBrush="Black" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.Column="1">
+                                    
+                                    <TextBlock Foreground="{TemplateBinding Foreground}" FontWeight="{TemplateBinding FontWeight}" FontStyle="{TemplateBinding FontStyle}" FontStretch="{TemplateBinding FontStretch}" FontSize="{TemplateBinding FontSize}" FontFamily="{TemplateBinding FontFamily}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Text="PV" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                </Border>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="true"/>
+                        <Trigger Property="IsMouseOver" Value="true"/>
+                        <Trigger Property="IsPressed" Value="true"/>
+                        <Trigger Property="IsEnabled" Value="false"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
