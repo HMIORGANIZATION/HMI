@@ -1,0 +1,54 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                   
+    <DataTemplate x:Key="TOC">
+        <!--  Source Data = Toc (Database.xml)  -->
+        <TreeView >
+            <TreeView.ItemContainerStyle>
+                <Style TargetType="{x:Type TreeViewItem}">
+                    <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+                    <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+                </Style>
+            </TreeView.ItemContainerStyle>
+            <TreeView.Resources>
+                <HierarchicalDataTemplate DataType="" ItemsSource="{Binding Childs}">
+                    <Border 
+                          
+                            Background="Transparent">
+                        <TextBlock Text="{Binding Header}">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="FontSize" Value="12" />
+                                    <Style.Triggers>
+                                        <DataTrigger>
+                                            <Setter Property="FontSize" Value="12" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Border>
+                </HierarchicalDataTemplate>
+
+                <!-- Trends And Profiles Node DataTemplate -->
+                <!-- Trends - Used Defined Node DataTemplate -->
+                <!-- Trends - Pre Defined Node DataTemplate -->
+                <!-- Profiles Node DataTemplate -->
+                <HierarchicalDataTemplate x:Key="DynamicTocNode"
+                                          DataType=""
+                                          ItemsSource="{Binding Childs}">
+                    <TextBlock FontSize="12" Text="{Binding Name}" />
+                </HierarchicalDataTemplate>
+
+                <DataTemplate DataType="">
+                    <Border 
+                            Background="Transparent">
+                        <TextBlock Text="{Binding Description}"/>
+                    </Border>
+                </DataTemplate>
+
+            </TreeView.Resources>
+        </TreeView>
+    </DataTemplate>
+
+</ResourceDictionary>

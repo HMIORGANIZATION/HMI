@@ -72,9 +72,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="BootStrap\ApplicationScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Dictionary2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GR01.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GR02.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="HMI\Dictionary1.xaml">
       <SubType>Designer</SubType>
@@ -116,7 +128,16 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BootStrap\ApplicationScreen.xaml.cs">
+      <DependentUpon>ApplicationScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="GR01.xaml.cs">
+      <DependentUpon>GR01.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GR02.xaml.cs">
+      <DependentUpon>GR02.xaml</DependentUpon>
+    </Compile>
     <Compile Include="HMI\EN.xaml.cs">
       <DependentUpon>EN.xaml</DependentUpon>
     </Compile>
@@ -148,6 +169,10 @@
     <Page Include="Simple Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TOC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -189,6 +214,25 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="004.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Database.xml" />
+    <Resource Include="Resources\Home32.png" />
+    <Resource Include="Resources\Print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Home32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SplashScreen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BootStrap\Home32.png" />
+    <Resource Include="BootStrap\Print.png" />
+    <Resource Include="BootStrap\SplashScreen1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

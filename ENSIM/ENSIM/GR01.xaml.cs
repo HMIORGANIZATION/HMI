@@ -10,30 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ENSIM
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for GR01.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class GR01 : Window
     {
-        public MainWindow()
+        public GR01()
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            
-
-          
-        }
-
-
     }
-
-
 }
