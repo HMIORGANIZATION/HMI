@@ -1,0 +1,23 @@
+﻿<core:CoreApplication SplashScreenName="Resources/splashscreen.png"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	                      xmlns:system="clr-namespace:System;assembly=mscorlib"
+
+	xmlns:core="clr-namespace:RSI.WPFApplication.Core;assembly=RSI.WPFApplication.Core"
+	x:Class="RSIStandardEmulationApp1.BootStrap.App">
+
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/RSI.Emulation.Controls;component/Resources.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/RSI.Common.Core;component/Resources.xaml" />
+        <ResourceDictionary Source="../TOC.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+	  
+	<!--  Startup Page  -->
+	<system:String x:Key="StartupPage">HomeScreen</system:String>
+	  
+    </ResourceDictionary>
+  </Application.Resources>
+
+</core:CoreApplication>
